@@ -1,0 +1,630 @@
+---
+title: Welcome to Middleman
+---
+
+#impress{ :data => { :'max-scale' => 0.8 } }
+  #title-train.step{ :data => { :x => 0, :y => 0, :z => 10000, :scale => 4 } }
+    %div{:style => 'text-align: center; vertical-align: middle; height: 100%;'}
+      %img{:src => 'images/trainsong.png', :style => 'height: 684px; width: 1046px;'}      
+    -#%object{ :type => "application/x-shockwave-flash", :data => "/flash/i_like_trains.swf", :width => "100%", :height => "100%", :style => "visibility: visible; height: 684px; width: 1046px;" }
+
+  #title-card.slide.step{ :data => { :x => 0, :y => 0, :scale => 4 } }
+    .title
+      - letters = {}
+      - ["I", "LIKE", "TRAINS"].each do |line|
+        %h1.trains
+          - line.each_char do |c|
+            - letters[c] = (letters[c] || 0) + 1
+            %span.letter{ :class => ("#{c.downcase}#{letters[c] if letters[c] > 1}" unless c == ' ') }
+              = c
+
+  #title-card-reverse.slide.step{ :data => { :x => 0, :y => 0, :z => -5, :'rotate-y' => -180, :scale => 4 } }
+    .center
+      .content{ :style => 'top: 40%;'}
+        %h1.title{ :style => 'margin-top: -18px; line-height: 54px;'}
+          czyli
+          %br/
+          tworzenie stron internetowych
+          %br/
+          w
+          %br/
+          Ruby on Rails
+    
+
+  #ruby
+    #what-the-frack-it-is.slide.step{ :data => { :x => 12000, :y => 0, :scale => 2 } }
+      %embed.ruby-logo{ :src => "images/Ruby_logo.svg", :width => 200, :height => 200, :style => 'position: absolute; bottom: -20px; right: -20px; z-index: 158;' }
+      %h1.title Czymże u licha jest Ruby?!
+
+      %p.content
+        %h3.sub-title Charakterystyka
+        Dynamiczne, silne typowane język czysto obiektowy; elastyczny i przychylny metakodowi
+        %h3.sub-title Komu je zawdzięczamy?
+        松本行弘 z szalonego kraju Japonią zwanego
+        %h3.sub-title Czemu właściwie powstało?
+        Matsumoto-san lubił wiele mechanizmów z wielu języków, ale nigdy nie trafił na taki w którym byłyby one wszystkie w jednym, przyjemynm opakowaniu; rozwiązanie wydawało się oczywiste i w 1995 światło dzienne ujrzała pierwsza publiczna wersja Ruby
+        %h3.sub-title Skąd twórca języka kradł ficzery?
+        głównie Perl i Smalltalk, czasem też coś z Eiffela, Ady oraz LISPa
+
+    #how-the-frack-does-it-look.slide.step{ :data => { :x => 15000, :y => 0, :scale => 2 } }
+      %h1.title Jak to do diaska wygląda?!
+
+      %p.content
+        = highlight_code :ruby do
+          :plain
+            n = 10_000
+            stay = switch = 0
+             
+
+            n.times.zip (['th', 'st', 'nd', 'rd'] + ['th'] * 6).cycle do |i, cardinal|
+              puts "\#{i}\#{cardinal} iteration"
+              (doors = [:goat] * 3)[rand 3] = :car 
+              guess = rand 3
+             
+              begin shown = rand 3 end while shown == guess || doors[shown] == :car
+              stay += 1 if doors[guess] == :car
+              switch += 1 if doors[3 - guess - shown] == :car         
+            end
+             
+            puts "Staying wins %.2f%% of the time."   % (100.0 * stay   / n)
+            puts "Switching wins %.2f%% of the time." % (100.0 * switch / n)
+
+        %h3.sub-title Wynik działania:
+        = highlight_code :linenos => false do
+          :plain
+            0th iteration
+            1st iteration
+            2nd iteration
+            3rd iteration
+            4th iteration
+            ...
+            Staying wins 33.36% of the time.
+            Switching wins 66.64% of the time.
+
+    #how-the-frack-does-it-look-reverse.slide.step{ :data => { :x => 15000, :y => 0, :z => -5, :'rotate-y' => -180, :scale => 2 } }
+      .center
+        .content
+          %h2.title{ :style => 'margin-top: -18px;'} Wniosek: Zmieniaj bramkę!   
+          Chyba, że lubisz kozy ; )     
+
+    #basics
+      #basics-variables.slide.step{ :data => { :x => 18000, :y => 0, :scale => 2 } }
+        %h1.title Podstawy Ruby
+        -#
+          Ruby nie jest tak prostym językiem jak np. Python, więc jego możliwości przedstawię tylko pokrótce tak, abyście mogli zrozumieć o co dalej w ogóle chodzi, aczkolwiek moim zdaniem Railsay są bardzo czytelnym frameworkiem nie to, co Djagno (firemark: siema!).
+
+        %h2 Zmienne
+        = highlight_code :ruby do
+          :plain
+            #literały
+            123, 123_456_789, -4.5, 2134e-3, 0xffff, 0b01011, 0377
+            'string bez interpolacji\n', "string z interpolacją \#{1 + 2}\n"
+            :symbol, :symbol_z_podkresleniem, :'symbol-z-myslnikami'
+            true, false, nil, self
+            [1, 2, 3, [4, 5, [6]], 7, "a kuku"]
+            [3] * 3 = [3, 3, 3] # stylowe trzy po trzy, podobnie jak w Pythonie
+            {'klucz' => 'wartosc',
+              :the_answer_to_life_the_universe_and_everything => 42
+            }['klucz'] == 'wartosc'
+            /(?<month>\d{1,2})\/(?<day>\d{1,2})\/(?<year>\d{4})/ #regexp
+
+            #nazwy
+            zmienna, gęśl, żółtko, kopytko, zmiENNA, 松本行弘
+            STAŁA, TEŻ_STAŁA, ChOrA_StAłA #redefinicja tylko warninguje
+            $global_variable, $mutual_assured_destruction, $a_game_of_chess
+            @instance_variable, @private_parts, @kable_ze_smiwu
+            @@class_variable, @@that_is, @@static, @@anonimowi_alkochochlicy
+
+            #destructuring assignment
+            a = 1                     # assignment as usual
+            b, c = 3                  # b = 3, c = nil
+            d, e, f = 1, 2, 3         # d = 1, e = 2, c = 3
+            g, h, i = [1, 2]          # g = 1, h = 2, i = nil
+            j, k, l = [1, 2, 3, 4]    # j = 1, k = 2, l = 3
+            m, n, *o = [1, 2, 3, 4]   # m = 1, n = 2, o = [3, 4] SPLATS!
+
+      #basics-functions.slide.step{ :data => { :x => 21000, :y => 0, :scale => 2 } }
+        %h2 Funkcje
+        = highlight_code :ruby do
+          :plain
+            def let_me_tell_you_about(what = "Homestuck")
+              "Let me tell you about \#{what}!"
+            end
+
+            let_me_tell_you_about          # wywołanie funkcji
+            let_me_tell_you_about("Ruby")  # można ominąc nawiasy, ale odradzam
+            let_me_tell_you_about "Rails"  # Ruby ma beznadziejny parser ; f
+
+            def lolfunkcja(arg1, arg2, opts = {})
+              (arg1 = -arg1) if opts[:arg1] == :negative
+              (arg2 = -arg2) if opts[:arg2] == :negative
+              arg1 + arg2
+            end
+
+            lolfunkcja(5, 6, :arg1 => :negative,
+                             :zjadam => :hash,
+                             :opcji => :na,
+                             :sniadanie => true)
+
+            def sum(*args)            # śmieszna varargowa suma
+              args.reduce(:+)         # wut? emotki?
+            end
+
+            5.times do |i|            # JAK TO... PĘTLA JEST FUNKCJĄ?!?
+              puts i                  # witajcie w świecie funkcji wyższego rzędu ; )
+            end
+
+      #higher-order-functions.slide.step{ :data => { :x => 24000, :y => 0, :scale => 2 } }
+        %h2 Funkcje wyższego rzędu
+        :markdown
+          Bardzo często spotykaną rzeczą w Ruby są Smalltalkowe bloki (technicznie - *closure*, czyli domknięcia).
+
+        = highlight_code :ruby do
+          :plain
+            [1, 2, 3, 4, 5].each do |el|
+              puts el
+            end
+
+            [1, 2, 3, 4, 5].each_with_index do |el, idx|
+              puts "\#{el} @ idx \#{idx}"
+            end
+
+            [1, 2, 3, 4, 5].map { |el| el * 2 }
+
+            # a spróbuj tylko nawiasy usunąc, BAM parser głupieje
+            # co lepsze, dla zapisu do ... end to działa : D
+            [1, 2, 3, 4, 5].reduce(1) { |acc, el| acc *= el }
+            [1, 2, 3, 4, 5].reduce(1, :*) # love u guise
+          
+            # jeżeli jesteś japończykiem to oczywiście nazwa `filter` jest za prosta ; /
+            [1, 2, 3, 4, 5].select { |el| el % 2 == 0 }
+
+            { :a => 1, :b => 2 }.each do |k, v|
+              puts "\#{k} => \#{v}"
+            end
+
+        -#
+          W Ruby bloki często są wykorzystywane do tworzenia tak zwanych DSLi (*Domain Sepcific Language*), które potrafią bardzo poprawić czytelnosć kodu. W zasadzie Railsy są jednym wielkim Ruby'owym DSLem, ale o tym za chwilę.
+
+        -#
+          Blok jest to w przybliżeniu kawałek kodu który możesz sobie zachować na później i wykorzystać go w jakiś sposób. Profesjonalna nazwa na to to *closure* czyli na nasze - domknięcie.
+          Np. w tym wypadku jest to robione *implicite* poprzez użycie yield, w innym wypadku może być to block.call w jeszcze innym wypadku... Dość powiedzieć, że dokładne zasady działania bloków w Ruby są niemożebnie magiczne (jest SIEDEM różnych rodzajów bloków, które różnią się od siebie tym, czy są domknieciami czy nie, z jakiego zakresu wraca return i czy funkcja sprawdza swoją arność) i nie będziemy w nie wchodzić aby nie oszaleć.
+
+          W praktyce bloki są dużo mniej straszne
+
+      #higher-order-functions-reverse.slide.step{ :data => { :x => 24000, :y => 0, :z => -5, :'rotate-y' => -180, :scale => 2 } }
+        %h3.title{:style => 'margin-top: 0px;'}
+          Tak jak już mówiłem, BEZNADZIEJNY parser
+        %div{:style => 'text-align: center; vertical-align: middle; height: 100%;'}
+          %img{:src => 'images/train_crash.jpg', :style => 'width: 90%;'}
+
+      #higher-order-functions-bonus.slide.step{ :data => { :x => 27000, :y => 0, :scale => 2 } }
+        %h2{:style=>'width:110%;'}Funkcje wyższego rzędu - materiał bonusowy
+        Jak robić pętlę?
+        = highlight_code :ruby do
+          :plain        
+            class Integer
+              def my_times(&block)
+                i = 0
+                while i < self do
+                  puts "derp \#{i}"
+                  yield(i)
+                  i += 1
+                end
+              end
+            end
+        Jak zrobić ifa?
+        = highlight_code :ruby do
+          :plain        
+            def my_if(pred, &block)
+              a = pred ? true : false
+              yield if a
+              def a.my_else(&block)
+                yield if !self
+                self
+              end
+              return a
+            end
+
+      #classes.slide.step{ :data => { :x => 30000, :y => 0, :scale => 2 } }
+        %h2 Klasy
+        Ruby jest językiem czysto obiektowym, który wspiera tylko jednokrotne dziedziczenie.
+        = highlight_code :ruby do
+          :plain        
+            class Person
+              attr_reader :name, :age
+              @@people_so_far = 0
+
+              def initialize(name, age)
+                @name, @age = name, age; @@people_so_far += 1
+              end
+
+              def self.people_so_far
+                @@people_so_far
+              end
+
+              def <=>(person) # comparison operator for sorting
+                age <=> person.age
+              end
+
+              def to_s
+                "\#{name} (\#{age})"
+              end
+            end
+            class CaptainPickard < Person
+              def facepalm
+                puts "SPLAT!"
+              end
+            end
+
+      -#
+        group = [
+          Person.new("Bob", 33),
+          Person.new("Chris", 16),
+          Person.new("Ash", 23)
+        ]
+         
+        puts group.sort.reverse
+
+
+      #mixins.slide.step{ :data => { :x => 33000, :y => 0, :scale => 2 } }
+        %h2 Mixiny
+        Nadrabia to za to mixinami, czyli możliwością dołączenia dowolnego kodu do klasy. Może się to dziać nawet runtime, jak zobaczymy na następnym slajdzie.
+        = highlight_code :ruby do
+          :plain     
+            module PidgeonSwag
+              def add_swag
+                if @pidgeon then
+                  @pidgeon = @pidgeon.gsub(/pidgeon/, 'swag \0')
+                  puts "Swag added to your pidgeon!"
+                else
+                  puts "No pidgeon to add swag to!"
+                end
+              end
+            end
+
+            module Pidgeon
+              def be_pidgeon
+                @pidgeon ||= "Being all pidgeon and shit"
+              end
+            end
+
+            class CityFace # Gunnerkrigg Court to świetny komiks, polecam!
+              include Pidgeon
+              include PidgeonSwag # now with 100% more swag
+            end
+             
+      #message_passing.slide.step{ :data => { :x => 36000, :y => 0, :scale => 2 } }
+        %h2 Message Passing
+        :markdown
+          Jak było już wspomniane jedną z inpiracji dla Ruby był język Smalltalk, w którym istniały tylko obiekty i *message*. Podobnie jest i w Ruby.
+        = highlight_code :ruby do
+          :plain
+            5 + 2 == 5.send(:+, 2)
+
+            # ta sama funkcja wywołana poprzez send
+            [1, 2, 3, 4, 5].reduce(1) { |acc, el| acc *= el }
+            [1, 2, 3, 4].send(:reduce, 1) { |acc, el| acc *= el }
+
+            # ba, możemy sobie nawet składać parametry wywołania gdzieś na boku
+            # i potem je wykorzystać przy pomocy ze splatów
+            params = [:reduce, 1, :*]
+            [1, 2, 3, 4].send(*params)
+
+            # ba^2 - możemy dodawać mixiny RUNTIME!
+            class LameassPidegon
+              include Pidgeon
+            end
+
+            #swagify!
+            LameassPidegon.send(:include, PidgeonSwag)
+
+      #classes-and-co-bonus-slide-one.slide.step{ :data => { :x => 39000, :y => 0, :scale => 2 } }
+        %h2 Klasy i spółka - materiał bonusowy
+        %h3.sub-title Jak (w przybliżeniu) powstają DSLe?
+        = highlight_code :ruby do
+          :plain
+            module Colourifier
+              @@colour_mapping = { :normal => "\e[0m",
+                                   :red => "\e[31;1m",
+                                   :green => "\e[32;1m",
+                                   :yellow => "\e[33;1m",
+                                   :orange => "\e[35;1m" }
+
+              def self.method_missing(method, *args, &block)
+                if @@colour_mapping.keys.include?(method) then
+                  puts ["\#{@@colour_mapping[method]}",
+                        "\#{([args[0]] * (args[1] || 1)).join(', ')}",
+                        "\#{@@colour_mapping[:normal]}"].join
+                else
+                  super(method, *args, &block)
+                end
+              end
+
+              def self.responds_to?(method)
+                @@colour_mapping.keys.include?(method) || super(sym)
+              end
+            end
+
+            def colourify(&block)
+              Colourifier.class_eval(&block)
+            end
+
+      #classes-and-co-bonus-slide-one-reverse.slide.step{ :data => { :x => 39000, :y => 0, :z => -5, :'rotate-y' => -180, :scale => 2 } }
+        I następnie dostajemy przystępny interfejs do pisania kolorowanego tekstu. Niby nic, ale takie interfejsy są bardzo popularne w Ruby'owym świecie vide Rake czy dużo Railsowych bibliotek.
+        = highlight_code :ruby do
+          :plain
+            colourify do
+              red    "herp"
+              normal "derp", 2
+              yellow "hurr", 3
+              orange "durr"
+            end
+        Wynik:
+        = highlight_code :linenos => false, :escape => false do
+          :plain   
+            <span style="color: red;">herp</span>
+            derp, derp
+            <span style="color: yellow;">hurr, hurr, hurr</span>
+            <span style="color: orange;">durr</span>
+
+      #classes-and-co-bonus-slide-two.slide.step{ :data => { :x => 42000, :y => 0, :scale => 2 } }
+        %h2 Klasy i spółka - materiał bonusowy
+        %h3 Makra klasowe
+        Załóżmy, że mamy kod:
+        = highlight_code :ruby do
+          :plain
+            class Door
+              include FieldMutator # the difference between include and extend
+                                  # is slightly esoteric
+
+              field_mutator :colour do |new_value, old_value|
+                if old_value then
+                  puts "I see a \#{old_value} door and I want it painted \#{new_value}!"
+                end
+              end
+            end
+
+            door = Door.new
+            door.colour = "red"
+            door.colour = "black"
+            door.colour = "red again"
+
+        I chcemy aby wypisał coś takiego:
+        = highlight_code :linenos => false, :escape => false do
+          :plain   
+            I see a red door and I want it painted black!
+            I see a black door and I want it painted red again!
+
+      #classes-and-co-bonus-slide-two-reverse.slide.step{ :data => { :x => 42000, :y => 0, :z => -5, :'rotate-y' => -180, :scale => 2 } }
+        Stworzyć tak działające makro klasowe możemy poniższym kodem:
+        = highlight_code :ruby do
+          :plain      
+            module FieldMutator
+              def self.included(base)
+                base.extend(ClassMethods)
+              end
+              module ClassMethods
+                def field_mutator(name, &block)
+                  var_name = "@\#{name}_field".to_sym
+
+                  if block_given? then
+                    callback = block
+                  end
+
+                  define_method name.to_sym do
+                    return instance_variable_get(var_name)
+                  end
+
+                  define_method "\#{name}=".to_sym do |new_value|
+                    if callback then
+                      callback.call(new_value, instance_variable_get(var_name))
+                    end
+
+                    instance_variable_set(var_name, new_value)
+                  end      
+                end
+              end
+            end
+        %div{:style => 'margin-top: -1em'}
+        :markdown
+          Jak zobaczycie dalej to kolejna bardzo popularna technika w Railsach (aczkolwiek jest to troche dziwne przedefiniowywanie *include* aby działało jak *include* i *extend* jednocześnie).
+
+      #ecosystem.slide.step{ :data => { :x => 45000, :y => 0, :scale => 2 } }
+        %h2 Ekosystem
+        %h3 Budowanie
+        :markdown
+          Jak to ostatnimi czasy popularne każdy język programowania (i jego pies) dodaje swoją cegiełkę do systemów buildowania. W przypadku Ruby jest to *rake*. Pozwala na bardzo czytelnie (DSLe!) tworzenia zadań dla Ruby'owych (i nie tylko) pakietów. Może i Ruby nie jest językiem kompilowanym, ale możliwosć oskryptowania pewnych zadań przydaje sie zawsze.
+        %h3 Biblioteki
+        :markdown
+          Ruby'owe biblioteki nazywają się *gemami*. Jest to specjalny format pakietu, która pozwala na łatwą instalację ruby'owej biblioteki. Od Ruby 1.9 jest to oficjalny system dystrybucji bibliotek, przedtem był niezależnym - ale szeroko stosowanym - projektem. Zarządzanie gemami w projekcie jeszcze bardziej upraszcza *bundler* opisany w dalszej części prezentacji.
+
+  #intermezzo
+    #and-now-for-something-completely-different.slide.step{ :data => { :x => 45000, :y => 5000, :'rotate-z' => -180, :scale => 2 } }
+      .center
+        .content{ :style => 'top: 25%;'}
+          %img{ :src => "images/and_now_its_time_for_something_completely_different.jpg" }
+
+  #rails
+    #intro-reverse.slide.step{ :data => { :x => 45000, :y => 10000, :'rotate-z' => -180, :'rotate-x' => 90, :scale => 2 } }
+      %h1.title Epic Pizza App
+      %div{:style => 'text-align: center; vertical-align: middle; height: 100%;'}
+        %img{:src => 'images/pizza.jpg', :style => 'width: 90%;'}    
+
+    #intro.slide.step{ :data => { :x => 45000, :y => 10005, :'rotate-z' => -180, :'rotate-x' => 90, :'rotate-y' => -180, :scale => 2 } }
+      %h2 Ale najpierw choć trochę powagi...
+      %h3 Czym są Railsy?
+      :markdown
+        **Ruby on Rails** jest to framework webowy napisany w języku *Ruby*.
+        Jego głównym założeniem jest sprawienie aby pisanie aplikacji webowych było, szybkie, produktywne i przyjemne - w przyblizeniu w takiej kolejności.
+
+        Railsy mają swoje zdanie na bardzo wiele rzeczy - są tak zwanym *frameworkiem opiniowanym*. Głównymi założeniami *Rails Way* są:
+
+        * **Don't Repeat Yourself** - jeżeli już raz gdzieś napisałeś (lub ktoś napisał) jakiś kod, to po co miałbyś go pisać jescze raz?
+        * **Convention over Configuration** - jeżeli ktoś już kiedyś wymyślił bardzo dobry sposób na zrobienie czegoś, to po co na nowo odkrywać koło i konfigurować wszystko ręcznie dokładnie tak samo?
+        * **REST** - jeżeli już ktoś wymyślił protokół *HTTP* to czemu miałbyś wymyślać sobie własne akcje kontrolerów a nie dostoswać się do *czasowników HTTP*?
+
+    #rails-mvc.slide.step{ :data => { :x => 42000, :y => 10005, :'rotate-z' => -180, :'rotate-x' => 90, :'rotate-y' => -180, :scale => 2 } }
+      %h3 MVC à la Rails
+      :markdown
+        **MVC**, czyli **Model View Controler** - chyba każdy z was słyszał to przynajmniej raz w życiu.
+        Jak konkretnie wygląda to w przypadku Railsów?
+
+        Railsy propagują podejście *fat model, skinny controller* w którym akcenty ról poszczególnych komponentów rozkładają się następująco:
+
+        * **widok** jest odpowiedzialny za li tylko wyświetlanie danych. Każde wyrażenie po stronie szablonu jakiego niepotrzebnie użyjesz oznacza jeden bat od Twojego lokalnego guru Railsów gdy to zobaczy,
+        * **kontroler** jest odpowiedzialny za li tylko przetworzenie nadchodzącego zapytania, wyptanie modelu o dane i przekazanie ich do widoku; zasada z batami wygląda tu podobnie,
+        * **model** jest odpowiedzialny za wszystko inne co możecie sobie wyobrazić. Większość Twojej *logiki biznesowej* (eww... brzmi enterprajsowo) znajdzie się właśnie tutaj.
+
+    #lets-get-started.slide.step{ :data => { :x => 39000, :y => 10005, :'rotate-z' => -180, :'rotate-x' => 90, :'rotate-y' => -180, :scale => 2 } }
+      %h2 A więc jak stworzyć railsowy projekt?
+
+      :markdown
+        Przede wszystkim musimy zainstalować mieć zainstalowany gem **rails** system-wide, np. poprzez #{inline_code("sudo gem install rails")}.
+
+        Udostępnia nam on komendę #{inline_code("rails")} która służy do tworzenia i zarządzania projektem railsowym. Tworzenie nowego projektu wygląda np. tak:
+
+      = highlight_code :linenos => false do
+        :plain
+          rails new EpicPizzaApp --skip-bundle --old-style-hash
+
+      :markdown
+        Generalnie komenda ma kilka interesujących parametrów, które możesz odkryć wywołując komendę z parametrem #{inline_code("--help")}.
+
+        Te dwa które użyłem powstrzymują Railsy przed autmatyczną instalacją zależności (gdyż zrobimy to za chwilę) oraz użyciem nowej składni hashy (gdyż moim zdaniem starsza jest dużo czytelniejsza).
+
+    #bundler.slide.step{ :data => { :x => 36000, :y => 10005, :'rotate-z' => -180, :'rotate-x' => 90, :'rotate-y' => -180, :scale => 2 } }
+      %h2 Bundler - czyli zarządzanie zależnościami
+
+      :markdown
+        **Bundler** to gem, który zarządza zależnościami Twojej aplikacji i zapewnia, że na każdym komputerze na którym będziesz chciał ją zdeployować może spodziewać się dokładnie takiego samego zestawu gemów od których Twoja aplikacja zależy.
+
+        Standardowo #{inline_code("bundle install")} instaluje gemy system-wide, więc dla separacji środowisk poszczególnch aplikacji (jeżeli masz ich na danym komputerze więce niż jedną) warto pomyśleć o instalowaniu gemów w osobnych katalogach, poprzez parametr #{inline_code("--path /some/install/path")}.
+
+        Zestaw gemów jakie zainstaluje bundler jest zapisany w dwóch plikach:
+        * **Gemfile** - nazwy i wersje gemów od jaich zależy projekt,
+        * **Gemfile.lock** - nazwy i wersje wszystkich zainstalowanych podczas #{inline_code("bundle install")} gemów, włączając w to zależności Twoich zależności. Tego pliku nie powinno się edytować ręcznie.
+
+    #app-structure.slide.step{ :data => { :x => 33000, :y => 10005, :'rotate-z' => -180, :'rotate-x' => 90, :'rotate-y' => -180, :scale => 2 } }
+      %h2 Struktura aplikacji
+
+      :markdown
+        Tak jak było powiedziane Railsy to framework opiniowany, w związku z czym ma własne zdanie jak powinna wyglądać struktura Twojego projektu. Najważniejsze katalogi to:
+
+        * **app/** - zawiera wszystkie pliki aplikacji - modele, kontrolery, widoki, assety,
+        * **config/** - zawiera konfigurację Twojej aplikacji - route'y, konfigurację bazy danych, innych gemów,
+        * **db/** - dane dotyczące bazy danych - migracje, jej aktualny schemat,
+        * **lib/** - miejsce na jakieś nietypowe rzeczy które chcesz dołączyć do swojej aplikacji (np. własne marka klasowe),
+        * **public/** - pliki statuczne, skompilowane assety; w developmencie zwykle serwuje to sam stack Railsowy, w produkcji zwykle zostawia się to zadanie serwerowi,
+        * **test/** - testy Twojej aplikacji, za brak testów też się dostaje baty w świecie Railsów.
+
+    #database.slide.step{ :data => { :x => 30000, :y => 10005, :'rotate-z' => -180, :'rotate-x' => 90, :'rotate-y' => -180, :scale => 2 } }
+      %h2 Baza danych
+
+      :markdown
+        Bazę danych konfigurujesz w pliku #{inline_code("/config/database.yml")}.
+        Standardowo Railsy konfigurują użycie *SQLite3* które jest jak najbardziej odpowiednią bazą danych do zastosowań developmentowych.
+
+        Konkretne tabele bazy danych tworzymy w plikach migracji, np:
+
+      = highlight_code :ruby do
+        :plain
+          class CreateOrder < ActiveRecord::Migration
+            def change
+              create_table :orders do |t|
+                t.integer :order_id
+                t.integer :user_id, :null => false
+                t.boolean :important, :default => false    
+
+                t.timestamps
+              end
+
+              #add_index :orders, :order_id, :unique => true
+            end
+          end
+
+      %div{ :style => 'margin-top: -24px;' }
+        :markdown
+          Bazę danych tworzy się komendą #{inline_code("rake db:create")}, a przeprowadza migracje #{inline_code("rake db:migrate")}.
+
+    #scaffolding.slide.step{ :data => { :x => 27000, :y => 10005, :'rotate-z' => -180, :'rotate-x' => 90, :'rotate-y' => -180, :scale => 2 } }
+      %h2 Scaffolding
+
+      :markdown
+        Żeby uprościć tworzenie aplikacji Railsy udostępniają tzw. *scaffolding* czyli łatwe tworzeni szkieletu aplikacji. Np. prostą stronę umożliwającą pokazywanie/dodawanie/usuwanie/edycję (*CRUD*) pizz dodajemy tak:
+
+      = highlight_code :ruby, :linenos => false do
+        :plain
+          rails generate scaffold Pizza name:string description:text
+
+      Dostajemy wtedy model, widok, kontroler, route'y, migrację i wszystko co potrzebne aby obsłużyć pizze na jakimś podstawowym poziomie.
+
+    #models-relations.slide.step{ :data => { :x => 24000, :y => 10005, :'rotate-z' => -180, :'rotate-x' => 90, :'rotate-y' => -180, :scale => 2 } }
+      %h2 Modele i Relacje
+
+      :markdown
+        Pizza bez składników to słaba pizza. Dodajmy więc możliwość dodawania składników do pizzy. Aby łatwo zrealizować dodawanie składników w formatce dodawania pizzy użyjemy gemu #{inline_code("nested_form")}.
+
+        Najpierw dodajmy sobie składniki:
+
+      =highlight_code :ruby, :linenos => false do
+        :plain
+          rails generate model Ingredient pizza:references name:string price:integer
+
+      :markdown
+        Zaraaaz, chwila, to trochę bez sensu, będziemy przecież dublować składniki... Może jakiś inny typ relacji by się przydał?
+
+      =highlight_code :ruby, :linenos => false do
+        :plain
+          belongs_to # należy do; ta strona relacji posiada FK
+          has_one # posiada jedno; przeciwległa strona relacji posiada FK
+          has_many # posiada wiele; przeciwległa strona relacji posiada FK
+          has_many :through # posiada wiele poprzez join model (join model posiada dwa FK)
+          has_one :through # posiada jeden poprzez join model
+          has_and_belongs_to_many # wiele-do-wielu
+                                  # ale join table nie dostaje własnego modelu
+
+          rails generate model IngredientAssociation pizza:references
+                                                     ingredient:references quantity:integer
+
+    #code-browsing.slide.step{ :data => { :x => 21000, :y => 10005, :'rotate-z' => -180, :'rotate-x' => 90, :'rotate-y' => -180, :scale => 2 } }
+      .center
+        .content{ :style => 'top: 40%;'}
+          %h1.title{ :style => 'margin-top: -18px; line-height: 54px;'}
+            *SNIP*
+            %br/
+            tutaj odsyłam do załączonego kodu
+
+    #books.slide.step{ :data => { :x => 18000, :y => 10005, :'rotate-z' => -180, :'rotate-x' => 90, :'rotate-y' => -180, :scale => 2 } }
+      %h2 Książki
+      :markdown
+        Do samego Ruby polecam przede wszystkim pierwszą pozycję, dwie pozostałe to raczej swego rodzaju materiał uzupełniający:
+
+        * *Programming Ruby 1.9 (3rd edition)*,  Dave Thomas, with Chad Fowler and Andy Hunt, 2009 Pragmatic Bookshelf
+        * *The Well-Grounded Rubyist*, David A. Black, 2009 Manning
+        * *Metaprogramming Ruby*, Paolo Perrotta, 2010 Pragmatic Bookshelf
+
+        Do samych Railsów bardzo fajną książką jest
+
+        * *Agile Web Development with Rails (4th edition)*, Sam Ruby, 2011 Pragmatic Bookshelf
+
+        W Polszy niestety dostępne jest tylko wydanie drugie, które - podobnie jak inne dostępne tutaj ksiazki o Railsach - jest sromotnie przestarzała, wobec czego sugeruję zakup PDF lub jakieś podobne rozwiązanie.
+
+  -#whats-with-those-trains.slide.step{ :data => { :x => 6000, :y => 0, :scale => 2 } }
+    Nothing in particular actually
+    = highlight_code :ruby do
+      :plain
+        def checklist_for what = :current_user, id = nil
+          case what
+            when :current_user
+              partial = 'layouts/user_checklist'
+              opts = { :type => "user" }
+              items = ChecklistItem.where("user_id in (?)", [current_user.id, 0]).order('position')
+              assignees = nil
+          end
+        end      
+
+  -##how-do-i-rails.slide.step{ :data => { :x => 12000, :y => 0, :scale => 2 } }
+    = highlight_code do
+      :plain
+        some_plain_code

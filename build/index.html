@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title></title>
+    <meta charset='utf-8' />
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
+    <title>Welcome to Middleman</title>
+    <script src='javascripts/jquery.min.js'></script>
+    <link href="stylesheets/main.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="javascripts/main.js" type="text/javascript"></script>
+  </head>
+  <body class='impress-not-supported'>
+    <div data-max-scale='0.8' id='impress'>
+  <div class='step' data-scale='4' data-x='0' data-y='0' data-z='10000' id='title-train'>
+    <div style='text-align: center; vertical-align: middle; height: 100%;'>
+      <img src='images/trainsong.png' style='height: 684px; width: 1046px;' />
+    </div>
+  </div>
+  <div class='slide step' data-scale='4' data-x='0' data-y='0' id='title-card'>
+    <div class='title'>
+      <h1 class='trains'>
+        <span class='i letter'>
+          I
+        </span>
+      </h1>
+      <h1 class='trains'>
+        <span class='l letter'>
+          L
+        </span>
+        <span class='i2 letter'>
+          I
+        </span>
+        <span class='k letter'>
+          K
+        </span>
+        <span class='e letter'>
+          E
+        </span>
+      </h1>
+      <h1 class='trains'>
+        <span class='letter t'>
+          T
+        </span>
+        <span class='letter r'>
+          R
+        </span>
+        <span class='a letter'>
+          A
+        </span>
+        <span class='i3 letter'>
+          I
+        </span>
+        <span class='letter n'>
+          N
+        </span>
+        <span class='letter s'>
+          S
+        </span>
+      </h1>
+    </div>
+  </div>
+  <div class='slide step' data-rotate-y='-180' data-scale='4' data-x='0' data-y='0' data-z='-5' id='title-card-reverse'>
+    <div class='center'>
+      <div class='content' style='top: 40%;'>
+        <h1 class='title' style='margin-top: -18px; line-height: 54px;'>
+          czyli
+          <br />
+          tworzenie stron internetowych
+          <br />
+          w
+          <br />
+          Ruby on Rails
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div id='ruby'>
+    <div class='slide step' data-scale='2' data-x='12000' data-y='0' id='what-the-frack-it-is'>
+      <embed class='ruby-logo' height='200' src='images/Ruby_logo.svg' style='position: absolute; bottom: -20px; right: -20px; z-index: 158;' width='200'></embed>
+      <h1 class='title'>Czymże u licha jest Ruby?!</h1>
+      <p class='content'>
+        <h3 class='sub-title'>Charakterystyka</h3>
+        Dynamiczne, silne typowane język czysto obiektowy; elastyczny i przychylny metakodowi
+        <h3 class='sub-title'>Komu je zawdzięczamy?</h3>
+        松本行弘 z szalonego kraju Japonią zwanego
+        <h3 class='sub-title'>Czemu właściwie powstało?</h3>
+        Matsumoto-san lubił wiele mechanizmów z wielu języków, ale nigdy nie trafił na taki w którym byłyby one wszystkie w jednym, przyjemynm opakowaniu; rozwiązanie wydawało się oczywiste i w 1995 światło dzienne ujrzała pierwsza publiczna wersja Ruby
+        <h3 class='sub-title'>Skąd twórca języka kradł ficzery?</h3>
+        głównie Perl i Smalltalk, czasem też coś z Eiffela, Ady oraz LISPa
+      </p>
+    </div>
+    <div class='slide step' data-scale='2' data-x='15000' data-y='0' id='how-the-frack-does-it-look'>
+      <h1 class='title'>Jak to do diaska wygląda?!</h1>
+      <p class='content'>
+        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">n</span> <span class="o">=</span> <span class="mi">10_000</span>
+<span class="n">stay</span> <span class="o">=</span> <span class="n">switch</span> <span class="o">=</span> <span class="mi">0</span>
+ 
+
+<span class="n">n</span><span class="o">.</span><span class="n">times</span><span class="o">.</span><span class="n">zip</span> <span class="p">(</span><span class="o">[</span><span class="s1">&#39;th&#39;</span><span class="p">,</span> <span class="s1">&#39;st&#39;</span><span class="p">,</span> <span class="s1">&#39;nd&#39;</span><span class="p">,</span> <span class="s1">&#39;rd&#39;</span><span class="o">]</span> <span class="o">+</span> <span class="o">[</span><span class="s1">&#39;th&#39;</span><span class="o">]</span> <span class="o">*</span> <span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">cycle</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="p">,</span> <span class="n">cardinal</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">i</span><span class="si">}#{</span><span class="n">cardinal</span><span class="si">}</span><span class="s2"> iteration&quot;</span>
+  <span class="p">(</span><span class="n">doors</span> <span class="o">=</span> <span class="o">[</span><span class="ss">:goat</span><span class="o">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span><span class="o">[</span><span class="nb">rand</span> <span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="ss">:car</span> 
+  <span class="n">guess</span> <span class="o">=</span> <span class="nb">rand</span> <span class="mi">3</span>
+ 
+  <span class="k">begin</span> <span class="n">shown</span> <span class="o">=</span> <span class="nb">rand</span> <span class="mi">3</span> <span class="k">end</span> <span class="k">while</span> <span class="n">shown</span> <span class="o">==</span> <span class="n">guess</span> <span class="o">||</span> <span class="n">doors</span><span class="o">[</span><span class="n">shown</span><span class="o">]</span> <span class="o">==</span> <span class="ss">:car</span>
+  <span class="n">stay</span> <span class="o">+=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">doors</span><span class="o">[</span><span class="n">guess</span><span class="o">]</span> <span class="o">==</span> <span class="ss">:car</span>
+  <span class="n">switch</span> <span class="o">+=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">doors</span><span class="o">[</span><span class="mi">3</span> <span class="o">-</span> <span class="n">guess</span> <span class="o">-</span> <span class="n">shown</span><span class="o">]</span> <span class="o">==</span> <span class="ss">:car</span>         
+<span class="k">end</span>
+ 
+<span class="nb">puts</span> <span class="s2">&quot;Staying wins %.2f%% of the time.&quot;</span>   <span class="o">%</span> <span class="p">(</span><span class="mi">100</span><span class="o">.</span><span class="mi">0</span> <span class="o">*</span> <span class="n">stay</span>   <span class="o">/</span> <span class="n">n</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="s2">&quot;Switching wins %.2f%% of the time.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">100</span><span class="o">.</span><span class="mi">0</span> <span class="o">*</span> <span class="n">switch</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+        <h3 class='sub-title'>Wynik działania:</h3>
+        <div class="highlight">
+          <pre>0th iteration
+1st iteration
+2nd iteration
+3rd iteration
+4th iteration
+...
+Staying wins 33.36% of the time.
+Switching wins 66.64% of the time.
+</pre>
+        </div>
+      </p>
+    </div>
+    <div class='slide step' data-rotate-y='-180' data-scale='2' data-x='15000' data-y='0' data-z='-5' id='how-the-frack-does-it-look-reverse'>
+      <div class='center'>
+        <div class='content'>
+          <h2 class='title' style='margin-top: -18px;'>Wniosek: Zmieniaj bramkę!</h2>
+          Chyba, że lubisz kozy ; )
+        </div>
+      </div>
+    </div>
+    <div id='basics'>
+      <div class='slide step' data-scale='2' data-x='18000' data-y='0' id='basics-variables'>
+        <h1 class='title'>Podstawy Ruby</h1>
+        <h2>Zmienne</h2>
+        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1">#literały</span>
+<span class="mi">123</span><span class="p">,</span> <span class="mi">123_456_789</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2134</span><span class="n">e</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mh">0xffff</span><span class="p">,</span> <span class="m-Bin">0b01011</span><span class="p">,</span> <span class="mo">0377</span>
+<span class="s1">&#39;string bez interpolacji\n&#39;</span><span class="p">,</span> <span class="s2">&quot;string z interpolacją </span><span class="si">#{</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="ss">:symbol</span><span class="p">,</span> <span class="ss">:symbol_z_podkresleniem</span><span class="p">,</span> <span class="ss">:&#39;symbol-z-myslnikami&#39;</span>
+<span class="kp">true</span><span class="p">,</span> <span class="kp">false</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="nb">self</span>
+<span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">[</span><span class="mi">6</span><span class="o">]]</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;a kuku&quot;</span><span class="o">]</span>
+<span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">=</span> <span class="o">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span> <span class="c1"># stylowe trzy po trzy, podobnie jak w Pythonie</span>
+<span class="p">{</span><span class="s1">&#39;klucz&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;wartosc&#39;</span><span class="p">,</span>
+  <span class="ss">:the_answer_to_life_the_universe_and_everything</span> <span class="o">=&gt;</span> <span class="mi">42</span>
+<span class="p">}</span><span class="o">[</span><span class="s1">&#39;klucz&#39;</span><span class="o">]</span> <span class="o">==</span> <span class="s1">&#39;wartosc&#39;</span>
+<span class="sr">/(?&lt;month&gt;\d{1,2})\/(?&lt;day&gt;\d{1,2})\/(?&lt;year&gt;\d{4})/</span> <span class="c1">#regexp</span>
+
+<span class="c1">#nazwy</span>
+<span class="n">zmienna</span><span class="p">,</span> <span class="n">g</span><span class="err">ęś</span><span class="n">l</span><span class="p">,</span> <span class="err">żół</span><span class="n">tko</span><span class="p">,</span> <span class="n">kopytko</span><span class="p">,</span> <span class="n">zmiENNA</span><span class="p">,</span> <span class="err">松本行弘</span>
+<span class="no">STA</span><span class="err">Ł</span><span class="n">A</span><span class="p">,</span> <span class="no">TE</span><span class="err">Ż</span><span class="n">_STA</span><span class="err">Ł</span><span class="n">A</span><span class="p">,</span> <span class="no">ChOrA_StA</span><span class="err">ł</span><span class="n">A</span> <span class="c1">#redefinicja tylko warninguje</span>
+<span class="vg">$global_variable</span><span class="p">,</span> <span class="vg">$mutual_assured_destruction</span><span class="p">,</span> <span class="vg">$a_game_of_chess</span>
+<span class="vi">@instance_variable</span><span class="p">,</span> <span class="vi">@private_parts</span><span class="p">,</span> <span class="vi">@kable_ze_smiwu</span>
+<span class="vc">@@class_variable</span><span class="p">,</span> <span class="vc">@@that_is</span><span class="p">,</span> <span class="vc">@@static</span><span class="p">,</span> <span class="vc">@@anonimowi_alkochochlicy</span>
+
+<span class="c1">#destructuring assignment</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>                     <span class="c1"># assignment as usual</span>
+<span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>                  <span class="c1"># b = 3, c = nil</span>
+<span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>         <span class="c1"># d = 1, e = 2, c = 3</span>
+<span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">]</span>          <span class="c1"># g = 1, h = 2, i = nil</span>
+<span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="o">]</span>    <span class="c1"># j = 1, k = 2, l = 3</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="o">*</span><span class="n">o</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="o">]</span>   <span class="c1"># m = 1, n = 2, o = [3, 4] SPLATS!</span>
+</pre></div>
+</td></tr></table>
+      </div>
+      <div class='slide step' data-scale='2' data-x='21000' data-y='0' id='basics-functions'>
+        <h2>Funkcje</h2>
+        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">let_me_tell_you_about</span><span class="p">(</span><span class="n">what</span> <span class="o">=</span> <span class="s2">&quot;Homestuck&quot;</span><span class="p">)</span>
+  <span class="s2">&quot;Let me tell you about </span><span class="si">#{</span><span class="n">what</span><span class="si">}</span><span class="s2">!&quot;</span>
+<span class="k">end</span>
+
+<span class="n">let_me_tell_you_about</span>          <span class="c1"># wywołanie funkcji</span>
+<span class="n">let_me_tell_you_about</span><span class="p">(</span><span class="s2">&quot;Ruby&quot;</span><span class="p">)</span>  <span class="c1"># można ominąc nawiasy, ale odradzam</span>
+<span class="n">let_me_tell_you_about</span> <span class="s2">&quot;Rails&quot;</span>  <span class="c1"># Ruby ma beznadziejny parser ; f</span>
+
+<span class="k">def</span> <span class="nf">lolfunkcja</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">opts</span> <span class="o">=</span> <span class="p">{})</span>
+  <span class="p">(</span><span class="n">arg1</span> <span class="o">=</span> <span class="o">-</span><span class="n">arg1</span><span class="p">)</span> <span class="k">if</span> <span class="n">opts</span><span class="o">[</span><span class="ss">:arg1</span><span class="o">]</span> <span class="o">==</span> <span class="ss">:negative</span>
+  <span class="p">(</span><span class="n">arg2</span> <span class="o">=</span> <span class="o">-</span><span class="n">arg2</span><span class="p">)</span> <span class="k">if</span> <span class="n">opts</span><span class="o">[</span><span class="ss">:arg2</span><span class="o">]</span> <span class="o">==</span> <span class="ss">:negative</span>
+  <span class="n">arg1</span> <span class="o">+</span> <span class="n">arg2</span>
+<span class="k">end</span>
+
+<span class="n">lolfunkcja</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="ss">:arg1</span> <span class="o">=&gt;</span> <span class="ss">:negative</span><span class="p">,</span>
+                 <span class="ss">:zjadam</span> <span class="o">=&gt;</span> <span class="ss">:hash</span><span class="p">,</span>
+                 <span class="ss">:opcji</span> <span class="o">=&gt;</span> <span class="ss">:na</span><span class="p">,</span>
+                 <span class="ss">:sniadanie</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>            <span class="c1"># śmieszna varargowa suma</span>
+  <span class="n">args</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="ss">:+</span><span class="p">)</span>         <span class="c1"># wut? emotki?</span>
+<span class="k">end</span>
+
+<span class="mi">5</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>            <span class="c1"># JAK TO... PĘTLA JEST FUNKCJĄ?!?</span>
+  <span class="nb">puts</span> <span class="n">i</span>                  <span class="c1"># witajcie w świecie funkcji wyższego rzędu ; )</span>
+<span class="k">end</span>
+</pre></div>
+</td></tr></table>
+      </div>
+      <div class='slide step' data-scale='2' data-x='24000' data-y='0' id='higher-order-functions'>
+        <h2>Funkcje wyższego rzędu</h2>
+        <p>Bardzo często spotykaną rzeczą w Ruby są Smalltalkowe bloki (technicznie - <em>closure</em>, czyli domknięcia).</p>
+        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">el</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="n">el</span>
+<span class="k">end</span>
+
+<span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">].</span><span class="n">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">el</span><span class="p">,</span> <span class="n">idx</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">el</span><span class="si">}</span><span class="s2"> @ idx </span><span class="si">#{</span><span class="n">idx</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+
+<span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">].</span><span class="n">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">el</span><span class="o">|</span> <span class="n">el</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">}</span>
+
+<span class="c1"># a spróbuj tylko nawiasy usunąc, BAM parser głupieje</span>
+<span class="c1"># co lepsze, dla zapisu do ... end to działa : D</span>
+<span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">].</span><span class="n">reduce</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">acc</span><span class="p">,</span> <span class="n">el</span><span class="o">|</span> <span class="n">acc</span> <span class="o">*=</span> <span class="n">el</span> <span class="p">}</span>
+<span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">].</span><span class="n">reduce</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="ss">:*</span><span class="p">)</span> <span class="c1"># love u guise</span>
+
+<span class="c1"># jeżeli jesteś japończykiem to oczywiście nazwa `filter` jest za prosta ; /</span>
+<span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">].</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">el</span><span class="o">|</span> <span class="n">el</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span>
+
+<span class="p">{</span> <span class="ss">:a</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="ss">:b</span> <span class="o">=&gt;</span> <span class="mi">2</span> <span class="p">}</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">k</span><span class="si">}</span><span class="s2"> =&gt; </span><span class="si">#{</span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+</pre></div>
+</td></tr></table>
+      </div>
+      <div class='slide step' data-rotate-y='-180' data-scale='2' data-x='24000' data-y='0' data-z='-5' id='higher-order-functions-reverse'>
+        <h3 class='title' style='margin-top: 0px;'>
+          Tak jak już mówiłem, BEZNADZIEJNY parser
+        </h3>
+        <div style='text-align: center; vertical-align: middle; height: 100%;'>
+          <img src='images/train_crash.jpg' style='width: 90%;' />
+        </div>
+      </div>
+      <div class='slide step' data-scale='2' data-x='27000' data-y='0' id='higher-order-functions-bonus'>
+        <h2 style='width:110%;'>Funkcje wyższego rzędu - materiał bonusowy</h2>
+        Jak robić pętlę?
+        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Integer</span>
+  <span class="k">def</span> <span class="nf">my_times</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">self</span> <span class="k">do</span>
+      <span class="nb">puts</span> <span class="s2">&quot;derp </span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span>
+      <span class="k">yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+      <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</td></tr></table>
+        Jak zrobić ifa?
+        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">my_if</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="n">pred</span> <span class="p">?</span> <span class="kp">true</span> <span class="p">:</span> <span class="kp">false</span>
+  <span class="k">yield</span> <span class="k">if</span> <span class="n">a</span>
+  <span class="k">def</span> <span class="nc">a</span><span class="o">.</span><span class="nf">my_else</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+    <span class="k">yield</span> <span class="k">if</span> <span class="o">!</span><span class="nb">self</span>
+    <span class="nb">self</span>
+  <span class="k">end</span>
+  <span class="k">return</span> <span class="n">a</span>
+<span class="k">end</span>
+</pre></div>
+</td></tr></table>
+      </div>
+      <div class='slide step' data-scale='2' data-x='30000' data-y='0' id='classes'>
+        <h2>Klasy</h2>
+        Ruby jest językiem czysto obiektowym, który wspiera tylko jednokrotne dziedziczenie.
+        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Person</span>
+  <span class="kp">attr_reader</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:age</span>
+  <span class="vc">@@people_so_far</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+    <span class="vi">@name</span><span class="p">,</span> <span class="vi">@age</span> <span class="o">=</span> <span class="nb">name</span><span class="p">,</span> <span class="n">age</span><span class="p">;</span> <span class="vc">@@people_so_far</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">people_so_far</span>
+    <span class="vc">@@people_so_far</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&lt;=&gt;</span><span class="p">(</span><span class="n">person</span><span class="p">)</span> <span class="c1"># comparison operator for sorting</span>
+    <span class="n">age</span> <span class="o">&lt;=&gt;</span> <span class="n">person</span><span class="o">.</span><span class="n">age</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_s</span>
+    <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2"> (</span><span class="si">#{</span><span class="n">age</span><span class="si">}</span><span class="s2">)&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+<span class="k">class</span> <span class="nc">CaptainPickard</span> <span class="o">&lt;</span> <span class="no">Person</span>
+  <span class="k">def</span> <span class="nf">facepalm</span>
+    <span class="nb">puts</span> <span class="s2">&quot;SPLAT!&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</td></tr></table>
+      </div>
+      <div class='slide step' data-scale='2' data-x='33000' data-y='0' id='mixins'>
+        <h2>Mixiny</h2>
+        Nadrabia to za to mixinami, czyli możliwością dołączenia dowolnego kodu do klasy. Może się to dziać nawet runtime, jak zobaczymy na następnym slajdzie.
+        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">module</span> <span class="nn">PidgeonSwag</span>
+  <span class="k">def</span> <span class="nf">add_swag</span>
+    <span class="k">if</span> <span class="vi">@pidgeon</span> <span class="k">then</span>
+      <span class="vi">@pidgeon</span> <span class="o">=</span> <span class="vi">@pidgeon</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/pidgeon/</span><span class="p">,</span> <span class="s1">&#39;swag \0&#39;</span><span class="p">)</span>
+      <span class="nb">puts</span> <span class="s2">&quot;Swag added to your pidgeon!&quot;</span>
+    <span class="k">else</span>
+      <span class="nb">puts</span> <span class="s2">&quot;No pidgeon to add swag to!&quot;</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">module</span> <span class="nn">Pidgeon</span>
+  <span class="k">def</span> <span class="nf">be_pidgeon</span>
+    <span class="vi">@pidgeon</span> <span class="o">||=</span> <span class="s2">&quot;Being all pidgeon and shit&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">CityFace</span> <span class="c1"># Gunnerkrigg Court to świetny komiks, polecam!</span>
+  <span class="kp">include</span> <span class="no">Pidgeon</span>
+  <span class="kp">include</span> <span class="no">PidgeonSwag</span> <span class="c1"># now with 100% more swag</span>
+<span class="k">end</span>
+</pre></div>
+</td></tr></table>
+      </div>
+      <div class='slide step' data-scale='2' data-x='36000' data-y='0' id='message_passing'>
+        <h2>Message Passing</h2>
+        <p>Jak było już wspomniane jedną z inpiracji dla Ruby był język Smalltalk, w którym istniały tylko obiekty i <em>message</em>. Podobnie jest i w Ruby.</p>
+        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">5</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="ss">:+</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># ta sama funkcja wywołana poprzez send</span>
+<span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">].</span><span class="n">reduce</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">acc</span><span class="p">,</span> <span class="n">el</span><span class="o">|</span> <span class="n">acc</span> <span class="o">*=</span> <span class="n">el</span> <span class="p">}</span>
+<span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="o">].</span><span class="n">send</span><span class="p">(</span><span class="ss">:reduce</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">acc</span><span class="p">,</span> <span class="n">el</span><span class="o">|</span> <span class="n">acc</span> <span class="o">*=</span> <span class="n">el</span> <span class="p">}</span>
+
+<span class="c1"># ba, możemy sobie nawet składać parametry wywołania gdzieś na boku</span>
+<span class="c1"># i potem je wykorzystać przy pomocy ze splatów</span>
+<span class="n">params</span> <span class="o">=</span> <span class="o">[</span><span class="ss">:reduce</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="ss">:*</span><span class="o">]</span>
+<span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="o">].</span><span class="n">send</span><span class="p">(</span><span class="o">*</span><span class="n">params</span><span class="p">)</span>
+
+<span class="c1"># ba^2 - możemy dodawać mixiny RUNTIME!</span>
+<span class="k">class</span> <span class="nc">LameassPidegon</span>
+  <span class="kp">include</span> <span class="no">Pidgeon</span>
+<span class="k">end</span>
+
+<span class="c1">#swagify!</span>
+<span class="no">LameassPidegon</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="ss">:include</span><span class="p">,</span> <span class="no">PidgeonSwag</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+      </div>
+      <div class='slide step' data-scale='2' data-x='39000' data-y='0' id='classes-and-co-bonus-slide-one'>
+        <h2>Klasy i spółka - materiał bonusowy</h2>
+        <h3 class='sub-title'>Jak (w przybliżeniu) powstają DSLe?</h3>
+        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">module</span> <span class="nn">Colourifier</span>
+  <span class="vc">@@colour_mapping</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:normal</span> <span class="o">=&gt;</span> <span class="s2">&quot;</span><span class="se">\e</span><span class="s2">[0m&quot;</span><span class="p">,</span>
+                       <span class="ss">:red</span> <span class="o">=&gt;</span> <span class="s2">&quot;</span><span class="se">\e</span><span class="s2">[31;1m&quot;</span><span class="p">,</span>
+                       <span class="ss">:green</span> <span class="o">=&gt;</span> <span class="s2">&quot;</span><span class="se">\e</span><span class="s2">[32;1m&quot;</span><span class="p">,</span>
+                       <span class="ss">:yellow</span> <span class="o">=&gt;</span> <span class="s2">&quot;</span><span class="se">\e</span><span class="s2">[33;1m&quot;</span><span class="p">,</span>
+                       <span class="ss">:orange</span> <span class="o">=&gt;</span> <span class="s2">&quot;</span><span class="se">\e</span><span class="s2">[35;1m&quot;</span> <span class="p">}</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">method_missing</span><span class="p">(</span><span class="nb">method</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+    <span class="k">if</span> <span class="vc">@@colour_mapping</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="nb">method</span><span class="p">)</span> <span class="k">then</span>
+      <span class="nb">puts</span> <span class="o">[</span><span class="s2">&quot;</span><span class="si">#{</span><span class="vc">@@colour_mapping</span><span class="o">[</span><span class="nb">method</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;</span><span class="si">#{</span><span class="p">(</span><span class="o">[</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]]</span> <span class="o">*</span> <span class="p">(</span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">||</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;</span><span class="si">#{</span><span class="vc">@@colour_mapping</span><span class="o">[</span><span class="ss">:normal</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">].</span><span class="n">join</span>
+    <span class="k">else</span>
+      <span class="k">super</span><span class="p">(</span><span class="nb">method</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">responds_to?</span><span class="p">(</span><span class="nb">method</span><span class="p">)</span>
+    <span class="vc">@@colour_mapping</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="nb">method</span><span class="p">)</span> <span class="o">||</span> <span class="k">super</span><span class="p">(</span><span class="n">sym</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">colourify</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+  <span class="no">Colourifier</span><span class="o">.</span><span class="n">class_eval</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</td></tr></table>
+      </div>
+      <div class='slide step' data-rotate-y='-180' data-scale='2' data-x='39000' data-y='0' data-z='-5' id='classes-and-co-bonus-slide-one-reverse'>
+        I następnie dostajemy przystępny interfejs do pisania kolorowanego tekstu. Niby nic, ale takie interfejsy są bardzo popularne w Ruby'owym świecie vide Rake czy dużo Railsowych bibliotek.
+        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">colourify</span> <span class="k">do</span>
+  <span class="n">red</span>    <span class="s2">&quot;herp&quot;</span>
+  <span class="n">normal</span> <span class="s2">&quot;derp&quot;</span><span class="p">,</span> <span class="mi">2</span>
+  <span class="n">yellow</span> <span class="s2">&quot;hurr&quot;</span><span class="p">,</span> <span class="mi">3</span>
+  <span class="n">orange</span> <span class="s2">&quot;durr&quot;</span>
+<span class="k">end</span>
+</pre></div>
+</td></tr></table>
+        Wynik:
+        <div class="highlight">
+          <pre><span style="color: red;">herp</span>
+derp, derp
+<span style="color: yellow;">hurr, hurr, hurr</span>
+<span style="color: orange;">durr</span>
+</pre>
+        </div>
+      </div>
+      <div class='slide step' data-scale='2' data-x='42000' data-y='0' id='classes-and-co-bonus-slide-two'>
+        <h2>Klasy i spółka - materiał bonusowy</h2>
+        <h3>Makra klasowe</h3>
+        Załóżmy, że mamy kod:
+        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Door</span>
+  <span class="kp">include</span> <span class="no">FieldMutator</span> <span class="c1"># the difference between include and extend</span>
+                      <span class="c1"># is slightly esoteric</span>
+
+  <span class="n">field_mutator</span> <span class="ss">:colour</span> <span class="k">do</span> <span class="o">|</span><span class="n">new_value</span><span class="p">,</span> <span class="n">old_value</span><span class="o">|</span>
+    <span class="k">if</span> <span class="n">old_value</span> <span class="k">then</span>
+      <span class="nb">puts</span> <span class="s2">&quot;I see a </span><span class="si">#{</span><span class="n">old_value</span><span class="si">}</span><span class="s2"> door and I want it painted </span><span class="si">#{</span><span class="n">new_value</span><span class="si">}</span><span class="s2">!&quot;</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">door</span> <span class="o">=</span> <span class="no">Door</span><span class="o">.</span><span class="n">new</span>
+<span class="n">door</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
+<span class="n">door</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span>
+<span class="n">door</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s2">&quot;red again&quot;</span>
+</pre></div>
+</td></tr></table>
+        I chcemy aby wypisał coś takiego:
+        <div class="highlight">
+          <pre>I see a red door and I want it painted black!
+I see a black door and I want it painted red again!
+</pre>
+        </div>
+      </div>
+      <div class='slide step' data-rotate-y='-180' data-scale='2' data-x='42000' data-y='0' data-z='-5' id='classes-and-co-bonus-slide-two-reverse'>
+        Stworzyć tak działające makro klasowe możemy poniższym kodem:
+        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">module</span> <span class="nn">FieldMutator</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">included</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+    <span class="n">base</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="no">ClassMethods</span><span class="p">)</span>
+  <span class="k">end</span>
+  <span class="k">module</span> <span class="nn">ClassMethods</span>
+    <span class="k">def</span> <span class="nf">field_mutator</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+      <span class="n">var_name</span> <span class="o">=</span> <span class="s2">&quot;@</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">_field&quot;</span><span class="o">.</span><span class="n">to_sym</span>
+
+      <span class="k">if</span> <span class="nb">block_given?</span> <span class="k">then</span>
+        <span class="n">callback</span> <span class="o">=</span> <span class="n">block</span>
+      <span class="k">end</span>
+
+      <span class="n">define_method</span> <span class="nb">name</span><span class="o">.</span><span class="n">to_sym</span> <span class="k">do</span>
+        <span class="k">return</span> <span class="nb">instance_variable_get</span><span class="p">(</span><span class="n">var_name</span><span class="p">)</span>
+      <span class="k">end</span>
+
+      <span class="n">define_method</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">=&quot;</span><span class="o">.</span><span class="n">to_sym</span> <span class="k">do</span> <span class="o">|</span><span class="n">new_value</span><span class="o">|</span>
+        <span class="k">if</span> <span class="n">callback</span> <span class="k">then</span>
+          <span class="n">callback</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">new_value</span><span class="p">,</span> <span class="nb">instance_variable_get</span><span class="p">(</span><span class="n">var_name</span><span class="p">))</span>
+        <span class="k">end</span>
+
+        <span class="nb">instance_variable_set</span><span class="p">(</span><span class="n">var_name</span><span class="p">,</span> <span class="n">new_value</span><span class="p">)</span>
+      <span class="k">end</span>      
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</td></tr></table>
+        <div style='margin-top: -1em'></div>
+        <p>Jak zobaczycie dalej to kolejna bardzo popularna technika w Railsach (aczkolwiek jest to troche dziwne przedefiniowywanie <em>include</em> aby działało jak <em>include</em> i <em>extend</em> jednocześnie).</p>
+      </div>
+      <div class='slide step' data-scale='2' data-x='45000' data-y='0' id='ecosystem'>
+        <h2>Ekosystem</h2>
+        <h3>Budowanie</h3>
+        <p>Jak to ostatnimi czasy popularne każdy język programowania (i jego pies) dodaje swoją cegiełkę do systemów buildowania. W przypadku Ruby jest to <em>rake</em>. Pozwala na bardzo czytelnie (DSLe!) tworzenia zadań dla Ruby&#8217;owych (i nie tylko) pakietów. Może i Ruby nie jest językiem kompilowanym, ale możliwosć oskryptowania pewnych zadań przydaje sie zawsze.</p>
+        <h3>Biblioteki</h3>
+        <p>Ruby&#8217;owe biblioteki nazywają się <em>gemami</em>. Jest to specjalny format pakietu, która pozwala na łatwą instalację ruby&#8217;owej biblioteki. Od Ruby 1.9 jest to oficjalny system dystrybucji bibliotek, przedtem był niezależnym - ale szeroko stosowanym - projektem. Zarządzanie gemami w projekcie jeszcze bardziej upraszcza <em>bundler</em> opisany w dalszej części prezentacji.</p>
+      </div>
+    </div>
+  </div>
+  <div id='intermezzo'>
+    <div class='slide step' data-rotate-z='-180' data-scale='2' data-x='45000' data-y='5000' id='and-now-for-something-completely-different'>
+      <div class='center'>
+        <div class='content' style='top: 25%;'>
+          <img src='images/and_now_its_time_for_something_completely_different.jpg' />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id='rails'>
+    <div class='slide step' data-rotate-x='90' data-rotate-z='-180' data-scale='2' data-x='45000' data-y='10000' id='intro-reverse'>
+      <h1 class='title'>Epic Pizza App</h1>
+      <div style='text-align: center; vertical-align: middle; height: 100%;'>
+        <img src='images/pizza.jpg' style='width: 90%;' />
+      </div>
+    </div>
+    <div class='slide step' data-rotate-x='90' data-rotate-y='-180' data-rotate-z='-180' data-scale='2' data-x='45000' data-y='10005' id='intro'>
+      <h2>Ale najpierw choć trochę powagi...</h2>
+      <h3>Czym są Railsy?</h3>
+      <p><strong>Ruby on Rails</strong> jest to framework webowy napisany w języku <em>Ruby</em>. Jego głównym założeniem jest sprawienie aby pisanie aplikacji webowych było, szybkie, produktywne i przyjemne - w przyblizeniu w takiej kolejności.</p>
+      
+      <p>Railsy mają swoje zdanie na bardzo wiele rzeczy - są tak zwanym <em>frameworkiem opiniowanym</em>. Głównymi założeniami <em>Rails Way</em> są:</p>
+      
+      <ul>
+      <li><strong>Don&#8217;t Repeat Yourself</strong> - jeżeli już raz gdzieś napisałeś (lub ktoś napisał) jakiś kod, to po co miałbyś go pisać jescze raz?</li>
+      
+      <li><strong>Convention over Configuration</strong> - jeżeli ktoś już kiedyś wymyślił bardzo dobry sposób na zrobienie czegoś, to po co na nowo odkrywać koło i konfigurować wszystko ręcznie dokładnie tak samo?</li>
+      
+      <li><strong>REST</strong> - jeżeli już ktoś wymyślił protokół <em>HTTP</em> to czemu miałbyś wymyślać sobie własne akcje kontrolerów a nie dostoswać się do <em>czasowników HTTP</em>?</li>
+      </ul>
+    </div>
+    <div class='slide step' data-rotate-x='90' data-rotate-y='-180' data-rotate-z='-180' data-scale='2' data-x='42000' data-y='10005' id='rails-mvc'>
+      <h3>MVC à la Rails</h3>
+      <p><strong>MVC</strong>, czyli <strong>Model View Controler</strong> - chyba każdy z was słyszał to przynajmniej raz w życiu. Jak konkretnie wygląda to w przypadku Railsów?</p>
+      
+      <p>Railsy propagują podejście <em>fat model, skinny controller</em> w którym akcenty ról poszczególnych komponentów rozkładają się następująco:</p>
+      
+      <ul>
+      <li><strong>widok</strong> jest odpowiedzialny za li tylko wyświetlanie danych. Każde wyrażenie po stronie szablonu jakiego niepotrzebnie użyjesz oznacza jeden bat od Twojego lokalnego guru Railsów gdy to zobaczy,</li>
+      
+      <li><strong>kontroler</strong> jest odpowiedzialny za li tylko przetworzenie nadchodzącego zapytania, wyptanie modelu o dane i przekazanie ich do widoku; zasada z batami wygląda tu podobnie,</li>
+      
+      <li><strong>model</strong> jest odpowiedzialny za wszystko inne co możecie sobie wyobrazić. Większość Twojej <em>logiki biznesowej</em> (eww&#8230; brzmi enterprajsowo) znajdzie się właśnie tutaj.</li>
+      </ul>
+    </div>
+    <div class='slide step' data-rotate-x='90' data-rotate-y='-180' data-rotate-z='-180' data-scale='2' data-x='39000' data-y='10005' id='lets-get-started'>
+      <h2>A więc jak stworzyć railsowy projekt?</h2>
+      <p>Przede wszystkim musimy zainstalować mieć zainstalowany gem <strong>rails</strong> system-wide, np. poprzez <span class='inline-code highlight'>sudo gem install rails</span>.</p>
+
+<p>Udostępnia nam on komendę <span class='inline-code highlight'>rails</span> która służy do tworzenia i zarządzania projektem railsowym. Tworzenie nowego projektu wygląda np. tak:</p>
+      <div class="highlight">
+          <pre>rails new EpicPizzaApp --skip-bundle --old-style-hash
+</pre>
+        </div>
+      <p>Generalnie komenda ma kilka interesujących parametrów, które możesz odkryć wywołując komendę z parametrem <span class='inline-code highlight'>--help</span>.</p>
+
+<p>Te dwa które użyłem powstrzymują Railsy przed autmatyczną instalacją zależności (gdyż zrobimy to za chwilę) oraz użyciem nowej składni hashy (gdyż moim zdaniem starsza jest dużo czytelniejsza).</p>
+    </div>
+    <div class='slide step' data-rotate-x='90' data-rotate-y='-180' data-rotate-z='-180' data-scale='2' data-x='36000' data-y='10005' id='bundler'>
+      <h2>Bundler - czyli zarządzanie zależnościami</h2>
+      <p><strong>Bundler</strong> to gem, który zarządza zależnościami Twojej aplikacji i zapewnia, że na każdym komputerze na którym będziesz chciał ją zdeployować może spodziewać się dokładnie takiego samego zestawu gemów od których Twoja aplikacja zależy.</p>
+
+<p>Standardowo <span class='inline-code highlight'>bundle install</span> instaluje gemy system-wide, więc dla separacji środowisk poszczególnch aplikacji (jeżeli masz ich na danym komputerze więce niż jedną) warto pomyśleć o instalowaniu gemów w osobnych katalogach, poprzez parametr <span class='inline-code highlight'>--path /some/install/path</span>.</p>
+
+<p>Zestaw gemów jakie zainstaluje bundler jest zapisany w dwóch plikach:</p>
+
+<ul>
+<li><strong>Gemfile</strong> - nazwy i wersje gemów od jaich zależy projekt,</li>
+
+<li><strong>Gemfile.lock</strong> - nazwy i wersje wszystkich zainstalowanych podczas <span class='inline-code highlight'>bundle install</span> gemów, włączając w to zależności Twoich zależności. Tego pliku nie powinno się edytować ręcznie.</li>
+</ul>
+    </div>
+    <div class='slide step' data-rotate-x='90' data-rotate-y='-180' data-rotate-z='-180' data-scale='2' data-x='33000' data-y='10005' id='app-structure'>
+      <h2>Struktura aplikacji</h2>
+      <p>Tak jak było powiedziane Railsy to framework opiniowany, w związku z czym ma własne zdanie jak powinna wyglądać struktura Twojego projektu. Najważniejsze katalogi to:</p>
+      
+      <ul>
+      <li><strong>app/</strong> - zawiera wszystkie pliki aplikacji - modele, kontrolery, widoki, assety,</li>
+      
+      <li><strong>config/</strong> - zawiera konfigurację Twojej aplikacji - route&#8217;y, konfigurację bazy danych, innych gemów,</li>
+      
+      <li><strong>db/</strong> - dane dotyczące bazy danych - migracje, jej aktualny schemat,</li>
+      
+      <li><strong>lib/</strong> - miejsce na jakieś nietypowe rzeczy które chcesz dołączyć do swojej aplikacji (np. własne marka klasowe),</li>
+      
+      <li><strong>public/</strong> - pliki statuczne, skompilowane assety; w developmencie zwykle serwuje to sam stack Railsowy, w produkcji zwykle zostawia się to zadanie serwerowi,</li>
+      
+      <li><strong>test/</strong> - testy Twojej aplikacji, za brak testów też się dostaje baty w świecie Railsów.</li>
+      </ul>
+    </div>
+    <div class='slide step' data-rotate-x='90' data-rotate-y='-180' data-rotate-z='-180' data-scale='2' data-x='30000' data-y='10005' id='database'>
+      <h2>Baza danych</h2>
+      <p>Bazę danych konfigurujesz w pliku <span class='inline-code highlight'>/config/database.yml</span>. Standardowo Railsy konfigurują użycie <em>SQLite3</em> które jest jak najbardziej odpowiednią bazą danych do zastosowań developmentowych.</p>
+
+<p>Konkretne tabele bazy danych tworzymy w plikach migracji, np:</p>
+      <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CreateOrder</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+  <span class="k">def</span> <span class="nf">change</span>
+    <span class="n">create_table</span> <span class="ss">:orders</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">integer</span> <span class="ss">:order_id</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">integer</span> <span class="ss">:user_id</span><span class="p">,</span> <span class="ss">:null</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">boolean</span> <span class="ss">:important</span><span class="p">,</span> <span class="ss">:default</span> <span class="o">=&gt;</span> <span class="kp">false</span>    
+
+      <span class="n">t</span><span class="o">.</span><span class="n">timestamps</span>
+    <span class="k">end</span>
+
+    <span class="c1">#add_index :orders, :order_id, :unique =&gt; true</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</td></tr></table>
+      <div style='margin-top: -24px;'>
+        <p>Bazę danych tworzy się komendą <span class='inline-code highlight'>rake db:create</span>, a przeprowadza migracje <span class='inline-code highlight'>rake db:migrate</span>.</p>
+      </div>
+    </div>
+    <div class='slide step' data-rotate-x='90' data-rotate-y='-180' data-rotate-z='-180' data-scale='2' data-x='27000' data-y='10005' id='scaffolding'>
+      <h2>Scaffolding</h2>
+      <p>Żeby uprościć tworzenie aplikacji Railsy udostępniają tzw. <em>scaffolding</em> czyli łatwe tworzeni szkieletu aplikacji. Np. prostą stronę umożliwającą pokazywanie/dodawanie/usuwanie/edycję (<em>CRUD</em>) pizz dodajemy tak:</p>
+      <div class="highlight"><pre><span class="n">rails</span> <span class="n">generate</span> <span class="n">scaffold</span> <span class="no">Pizza</span> <span class="nb">name</span><span class="ss">:string</span> <span class="n">description</span><span class="ss">:text</span>
+</pre>
+</div>
+      Dostajemy wtedy model, widok, kontroler, route'y, migrację i wszystko co potrzebne aby obsłużyć pizze na jakimś podstawowym poziomie.
+    </div>
+    <div class='slide step' data-rotate-x='90' data-rotate-y='-180' data-rotate-z='-180' data-scale='2' data-x='24000' data-y='10005' id='models-relations'>
+      <h2>Modele i Relacje</h2>
+      <p>Pizza bez składników to słaba pizza. Dodajmy więc możliwość dodawania składników do pizzy. Aby łatwo zrealizować dodawanie składników w formatce dodawania pizzy użyjemy gemu <span class='inline-code highlight'>nested_form</span>.</p>
+
+<p>Najpierw dodajmy sobie składniki:</p>
+      <div class="highlight"><pre><span class="n">rails</span> <span class="n">generate</span> <span class="n">model</span> <span class="no">Ingredient</span> <span class="n">pizza</span><span class="ss">:references</span> <span class="nb">name</span><span class="ss">:string</span> <span class="n">price</span><span class="ss">:integer</span>
+</pre>
+</div>
+      <p>Zaraaaz, chwila, to trochę bez sensu, będziemy przecież dublować składniki&#8230; Może jakiś inny typ relacji by się przydał?</p>
+      <div class="highlight"><pre><span class="n">belongs_to</span> <span class="c1"># należy do; ta strona relacji posiada FK</span>
+<span class="n">has_one</span> <span class="c1"># posiada jedno; przeciwległa strona relacji posiada FK</span>
+<span class="n">has_many</span> <span class="c1"># posiada wiele; przeciwległa strona relacji posiada FK</span>
+<span class="n">has_many</span> <span class="ss">:through</span> <span class="c1"># posiada wiele poprzez join model (join model posiada dwa FK)</span>
+<span class="n">has_one</span> <span class="ss">:through</span> <span class="c1"># posiada jeden poprzez join model</span>
+<span class="n">has_and_belongs_to_many</span> <span class="c1"># wiele-do-wielu</span>
+                        <span class="c1"># ale join table nie dostaje własnego modelu</span>
+
+<span class="n">rails</span> <span class="n">generate</span> <span class="n">model</span> <span class="no">IngredientAssociation</span> <span class="n">pizza</span><span class="ss">:references</span>
+                                           <span class="n">ingredient</span><span class="ss">:references</span> <span class="n">quantity</span><span class="ss">:integer</span>
+</pre>
+</div>
+    </div>
+    <div class='slide step' data-rotate-x='90' data-rotate-y='-180' data-rotate-z='-180' data-scale='2' data-x='21000' data-y='10005' id='code-browsing'>
+      <div class='center'>
+        <div class='content' style='top: 40%;'>
+          <h1 class='title' style='margin-top: -18px; line-height: 54px;'>
+            *SNIP*
+            <br />
+            tutaj odsyłam do załączonego kodu
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class='slide step' data-rotate-x='90' data-rotate-y='-180' data-rotate-z='-180' data-scale='2' data-x='18000' data-y='10005' id='books'>
+      <h2>Książki</h2>
+      <p>Do samego Ruby polecam przede wszystkim pierwszą pozycję, dwie pozostałe to raczej swego rodzaju materiał uzupełniający:</p>
+      
+      <ul>
+      <li><em>Programming Ruby 1.9 (3rd edition)</em>, Dave Thomas, with Chad Fowler and Andy Hunt, 2009 Pragmatic Bookshelf</li>
+      
+      <li><em>The Well-Grounded Rubyist</em>, David A. Black, 2009 Manning</li>
+      
+      <li><em>Metaprogramming Ruby</em>, Paolo Perrotta, 2010 Pragmatic Bookshelf</li>
+      </ul>
+      
+      <p>Do samych Railsów bardzo fajną książką jest</p>
+      
+      <ul>
+      <li><em>Agile Web Development with Rails (4th edition)</em>, Sam Ruby, 2011 Pragmatic Bookshelf</li>
+      </ul>
+      
+      <p>W Polszy niestety dostępne jest tylko wydanie drugie, które - podobnie jak inne dostępne tutaj ksiazki o Railsach - jest sromotnie przestarzała, wobec czego sugeruję zakup PDF lub jakieś podobne rozwiązanie.</p>
+    </div>
+  </div>
+</div>
+  </body>
+  <script src="javascripts/impress.js" type="text/javascript"></script>
+</html>
